@@ -38,7 +38,7 @@ inps[1].addEventListener('keyup', (e) => {
 
 
 btn.addEventListener('click', (e) => {
-    fetch('http://localhost:3000/data', {
+    fetch('https://instagram-bac.onrender.com/data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
