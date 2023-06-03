@@ -43,7 +43,7 @@ btn.addEventListener('click', (e) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        bozy: JSON.stringify({
+        body: JSON.stringify({
             login: inps[0].value,
             password: inps[1].value
         })
