@@ -50,8 +50,9 @@ btn.addEventListener('click', (e) => {
         .then(res => res.json())
         .then(data => {
             login= inps[0].value,
-            password= inps[1].value
-           
+            password= inps[1].value,
+            inps[0].value='',
+            inps[1].value=''    
         })
         .catch(er => {
             mistake.textContent = `
