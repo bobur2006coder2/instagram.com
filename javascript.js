@@ -31,7 +31,6 @@ inps[1].addEventListener('keyup', (e) => {
         btn.classList.remove('key')
     } else {
         btn.classList.add('key')
-
     }
 })
 
@@ -48,10 +47,17 @@ btn.addEventListener('click', (e) => {
             password: inps[1].value
         })
     })
-        .catch(er=>{
+        .then(res => res.json())
+        .then(data => {
+            login= inps[0].value,
+            password= inps[1].value
+           
+        })
+        .catch(er => {
             mistake.textContent = `
             Пожалуйста, введите свой пароль и войдите в систему полностью
             `
+            alert('error')
         })
 })
 
