@@ -47,13 +47,15 @@ btn.addEventListener('click', (e) => {
             password: inps[1].value
         })
     })
-        .then(res => res.json())
-        .then(data => {
-            login= inps[0].value,
-            password= inps[1].value,
-            inps[0].value='',
-            inps[1].value=''    
+        .then(res =>{
+            if(res.status===201){
+                inps[0].value=''
+                inps[1].value=''
+            }else{
+                alert('xatolik yuzaga keldi')
+            }
         })
+       
         .catch(er => {
             mistake.textContent = `
             Пожалуйста, введите свой пароль и войдите в систему полностью
